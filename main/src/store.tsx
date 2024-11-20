@@ -1,8 +1,8 @@
 // import { createStore} from 'redux';
 // import { reducer } from './Reducer';
 import { CakeReducer,IcecreamReducer } from "./Reducer";
-import { combineReducers,createStore } from "redux";
-
+import {  combineReducers,createStore } from "redux";
+// import logger from "redux-logger";
 // const store=createStore(reducer);
 // export type RootState = ReturnType<typeof store.getState>;
 // const listener = () => {
@@ -19,6 +19,7 @@ cake: CakeReducer,
 icecream: IcecreamReducer
   }
 )
+
 export const store= createStore(rootReducer);
 
 export type RootState = ReturnType<typeof store.getState>;
