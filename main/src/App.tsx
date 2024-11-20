@@ -1,15 +1,15 @@
-// App.tsx
+
 import React from 'react';
 import { Provider, useSelector, useDispatch } from 'react-redux';
-import store from './store';
+import {store} from './store';
 import { buyCake, buyIcecream } from './Action'; 
 
 
 type RootState = ReturnType<typeof store.getState>;
 
 const CakeComponent: React.FC = () => {
-const numberOfIcecream = useSelector((state: RootState) => state.icecream);
-  const numberOfCakes = useSelector((state: RootState) => state.cake);
+const numberOfIcecream = useSelector((state: RootState) => state.icecream?.icecream);
+  const numberOfCakes = useSelector((state: RootState) => state.cake?.cake);
   const dispatch = useDispatch();
 
   return (

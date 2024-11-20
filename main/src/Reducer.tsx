@@ -1,23 +1,54 @@
+
 import { BUY_CAKE ,BUY_ICECREAM,BuyCakeAction,  } from "./Action";
 
-const initialState={
-  cake:10,
-  icecream:10
-};
+// const initialState={
+//   cake:10,
+//   icecream:10
+// };
+const buycake={
+cake:10
+}
+const buyicecream=
+{
+icecream:20
+}
+// export const reducer= (state = initialState, action : BuyCakeAction ) => {
+// switch(action.type){
+//   case BUY_CAKE:
+//   return{
+//   ...state,
+//   cake:state.cake-1
+// }
+// case BUY_ICECREAM:
+// return{
+// ...state,
+// icecream:state.icecream+1
+// }
 
-export const reducer= (state = initialState, action : BuyCakeAction ) => {
+// default:return state;
+// }
+// }
+
+
+export const CakeReducer=(state=buycake,action:BuyCakeAction)=>
+{
 switch(action.type){
-  case BUY_CAKE:
-  return{
+  case BUY_CAKE:return{
   ...state,
-  cake:state.cake-1
+  cake : state.cake-1
+  }
+
+default:return state
 }
-case BUY_ICECREAM:
-return{
-...state,
-icecream:state.icecream+1
+}
+export const IcecreamReducer=(state=buyicecream,action:BuyCakeAction)=>{
+ switch(action.type){
+ case BUY_ICECREAM:
+ return{
+ ...state,
+ icecream:state.icecream+1
+ }
+ default:return state
 }
 
-default:return state;
-}
 }
