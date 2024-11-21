@@ -1,18 +1,30 @@
-export const BUY_CAKE='BUY_CAKE'
-export const BUY_ICECREAM='BUY_ICECREAM'
 
-export const buyCake = () => ({
-  type: BUY_CAKE,
-  info:'First redux action'
+export const ADD='ADD';
+export const REMOVE='REMOVE';
+
+export const add=() => ({
+
+  type: ADD,
+  info:"Add a new"
+
 })
 
-export const buyIcecream=() => ({
-  type: BUY_ICECREAM,
-  info:'Cake action'
-  }
-)
-export interface BuyCakeAction{
+export const remove=() => ({
 
-type: typeof BUY_CAKE | typeof BUY_ICECREAM;
-info: 'string';
+type: REMOVE,
+info:"Remove a new"
+})
+
+export interface AddAction
+{
+  type :typeof ADD,
+   info:"Add a new"
 }
+export interface RemoveAction
+{
+  type :typeof REMOVE,
+  info:"Remove a new"
+}
+
+
+export type UserAction= AddAction| RemoveAction

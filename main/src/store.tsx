@@ -1,30 +1,10 @@
-// import { createStore} from 'redux';
-// import { reducer } from './Reducer';
-import { CakeReducer,IcecreamReducer } from "./Reducer";
-import {  combineReducers,createStore } from "redux";
-// import logger from "redux-logger";
-// const store=createStore(reducer);
-// export type RootState = ReturnType<typeof store.getState>;
-// const listener = () => {
-//   console.log('State updated:', store.getState());
-// };
+import { createStore } from "redux";
 
-// store.subscribe(listener);
-// export default store;
+import {UserReducer} from "./Reducer";
 
+export const store = createStore(UserReducer);
 
-
-const rootReducer= combineReducers({
-cake: CakeReducer,
-icecream: IcecreamReducer
-  }
-)
-
-export const store= createStore(rootReducer);
-
-export type RootState = ReturnType<typeof store.getState>;
-
-const listener = () => {
-console.log('State updated:', store.getState());
+const listener=()=>{
+console.log('updated state',store.getState());
 }
-store.subscribe(listener);
+store.subscribe(listener)

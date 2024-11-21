@@ -1,54 +1,28 @@
+import { REMOVE, ADD, UserAction } from "./Action";
 
-import { BUY_CAKE ,BUY_ICECREAM,BuyCakeAction,  } from "./Action";
-
-// const initialState={
-//   cake:10,
-//   icecream:10
-// };
-const buycake={
-cake:10
+export interface UserState {
+  add: number;
+  remove: number;
 }
-const buyicecream=
-{
-icecream:20
-}
-// export const reducer= (state = initialState, action : BuyCakeAction ) => {
-// switch(action.type){
-//   case BUY_CAKE:
-//   return{
-//   ...state,
-//   cake:state.cake-1
-// }
-// case BUY_ICECREAM:
-// return{
-// ...state,
-// icecream:state.icecream+1
-// }
 
-// default:return state;
-// }
-// }
+const initialState: UserState = {
+  add: 10,
+  remove: 10,
+};
 
-
-export const CakeReducer=(state=buycake,action:BuyCakeAction)=>
-{
-switch(action.type){
-  case BUY_CAKE:return{
-  ...state,
-  cake : state.cake-1
+export const UserReducer = (state = initialState, action: UserAction): UserState => {
+  switch (action.type) {
+    case ADD:
+      return {
+        ...state,
+        add: state.add + 1,
+      };
+    case REMOVE:
+      return {
+        ...state,
+        remove: state.remove - 1,
+      };
+    default:
+      return state;
   }
-
-default:return state
-}
-}
-export const IcecreamReducer=(state=buyicecream,action:BuyCakeAction)=>{
- switch(action.type){
- case BUY_ICECREAM:
- return{
- ...state,
- icecream:state.icecream+1
- }
- default:return state
-}
-
-}
+};
